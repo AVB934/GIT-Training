@@ -25,7 +25,8 @@ class CNN(nn.Module):
         self.pool1 = nn.MaxPool2d(2, 2)
         self.conv2 = nn.Conv2d(32, 64, 3, 1, 1)
         self.pool2 = nn.MaxPool2d(2, 2)
-
+        
+        #7×7 = spatial dimensions after two stride-2 pooling operations
         self.fc1 = nn.Linear(64 * 7 * 7, 128)
         self.fc2 = nn.Linear(128, num_classes)
         self.dropout = nn.Dropout(0.5)
